@@ -1,20 +1,21 @@
-import './button.scss'
+import { MouseEventHandler, ReactNode } from 'react'
 
-type ButtonProps = Readonly<{
-    children: string,
+interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
+    children: ReactNode,
     color?: string,
-    fill?: string,
+    fill?: ReactNode,
     disabled?: boolean,
-    size?: string,
-    uppercase?: string,
-    maxWidth?: string,
-    minWidth?: string,
+    size?: ReactNode,
+    uppercase?: ReactNode,
+    maxWidth?: ReactNode,
+    minWidth?: ReactNode,
     customBGColor?: string,
     customColor?: string,
-    buttonClick?: undefined
-}>
+    buttonClick?: MouseEventHandler<HTMLButtonElement>
+}
 
-export default function Button({ children, ...props }: ButtonProps) {
+
+export default function ButtonAlt({ children, ...props }: ButtonProps) {
     const {
         color = 'default',
         disabled,
