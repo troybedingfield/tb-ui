@@ -1,1 +1,1 @@
-{"root":["./lib/index.ts","./lib/vite-env.d.ts","./lib/components/button/button.tsx","./lib/components/buttonalt/buttonalt.tsx"],"version":"5.6.3"}
+{"root":["./lib/index.ts","./lib/vite-env.d.ts","./lib/components/button/button.stories.ts","./lib/components/button/button.tsx","./lib/components/buttonalt/buttonalt.tsx"],"version":"5.6.3"}
