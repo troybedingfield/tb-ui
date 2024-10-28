@@ -2,7 +2,7 @@ button {
     padding: 4px 8px;
     border-radius: 8px;
     color: white;
-    background-color: var(--color-button-default);
+    background-color: var(--color-button-default, rgba(0, 124, 186, 0.95));
     border: none;
     box-shadow: none;
     min-height: 36px;
@@ -14,7 +14,7 @@ button {
     cursor: pointer;
 
     &.secondary {
-        background-color: var(--color-button-secondary);
+        background-color: var(--color-button-secondary, #001C29);
     }
 
     &.outline {
@@ -170,8 +170,8 @@ button {
 }
 
 .default {
-    color: var(--color, var(--color-text-button));
-    background-color: var(--color, var(--color-button-default));
+    color: var(#ffffff, var(--color-text-button));
+    background-color: var(rgba(0, 124, 186, 0.95), var(--color-button-default));
 }
 
 .disabled {
