@@ -2,17 +2,17 @@ import './button.scss'
 
 type ButtonProps = Readonly<{
     children: string,
-    color?: string,
-    fill?: string,
+    color?: 'default' | 'secondary' | 'error' | 'warning' | 'success' | 'disabled' | undefined,
+    fill?: 'solid' | 'outline' | 'none' | undefined,
     disabled?: boolean,
-    size?: string,
+    size?: 'small' | 'medium' | 'large' | undefined,
     uppercase?: string,
-    maxWidth?: string,
-    minWidth?: string,
+    maxWidth?: number,
+    minWidth?: number,
     customBGColor?: string,
     customColor?: string,
     customBorderColor?: string,
-    buttonClick?: undefined
+    buttonClick?: React.MouseEventHandler<HTMLButtonElement>
 }>
 
 export default function Button({ children, ...props }: ButtonProps) {
@@ -31,6 +31,6 @@ export default function Button({ children, ...props }: ButtonProps) {
     } = props
 
     return (
-        <button style={{ minWidth: minWidth + 'px', maxWidth: maxWidth + 'px', backgroundColor: customBGColor, color: customColor, borderColor: customBorderColor }} className={[color, fill, size, uppercase ? 'text-uppercase' : ''].join(' ')} onClick={buttonClick} disabled={disabled ? disabled : undefined}>{children}</button>
+        <button style={{ minWidth: minWidth ? minWidth + 'px' : '', maxWidth: maxWidth ? maxWidth + 'px' : '', backgroundColor: customBGColor, color: customColor, borderColor: customBorderColor }} className={[color, fill, size, uppercase ? 'text-uppercase' : ''].join(' ')} onClick={buttonClick} disabled={disabled ? disabled : undefined}>{children}</button>
     )
 }

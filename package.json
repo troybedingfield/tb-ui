@@ -22,7 +22,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "test": "vitest",
+    "test": "vitest --typecheck",
     "test:ui": "vitest --ui",
     "prebuild": "rm -rf dist",
     "build": "tsc -b && vite build",
