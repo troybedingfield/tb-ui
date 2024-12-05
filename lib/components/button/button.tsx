@@ -9,6 +9,8 @@ type ButtonProps = Readonly<{
     uppercase?: string,
     maxWidth?: number,
     minWidth?: number,
+    maxHeight?: number,
+    minHeight?: number,
     customBGColor?: string,
     customColor?: string,
     customBorderColor?: string,
@@ -24,6 +26,8 @@ export default function Button({ children, ...props }: ButtonProps) {
         uppercase,
         maxWidth,
         minWidth,
+        maxHeight,
+        minHeight,
         customBGColor,
         customColor,
         customBorderColor,
@@ -31,6 +35,6 @@ export default function Button({ children, ...props }: ButtonProps) {
     } = props
 
     return (
-        <button style={{ minWidth: minWidth ? minWidth + 'px' : '', maxWidth: maxWidth ? maxWidth + 'px' : '', backgroundColor: customBGColor, color: customColor, borderColor: customBorderColor }} className={[color, fill, size, uppercase ? 'text-uppercase' : ''].join(' ')} onClick={buttonClick} disabled={disabled ? disabled : undefined}>{children}</button>
+        <button style={{ minWidth: minWidth ? minWidth + 'px' : '', maxWidth: maxWidth ? maxWidth + 'px' : '', minHeight: minHeight ? minHeight + 'px' : '', maxHeight: maxHeight ? maxHeight + 'px' : '', backgroundColor: customBGColor, color: customColor, borderColor: customBorderColor }} className={[color, fill, size, uppercase ? 'text-uppercase' : ''].join(' ')} onClick={buttonClick} disabled={disabled ? disabled : undefined}>{children}</button>
     )
 }
