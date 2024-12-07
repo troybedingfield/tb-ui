@@ -1,5 +1,5 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
-import './SplitButton.scss'
+import './splitbutton.scss'
 
 
 type SplitButtonProps = Readonly<{
