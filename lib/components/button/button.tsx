@@ -2,11 +2,12 @@ import './button.scss'
 
 type ButtonProps = Readonly<{
     children: string,
-    color?: 'default' | 'secondary' | 'error' | 'warning' | 'success' | 'disabled' | undefined,
-    fill?: 'solid' | 'outline' | 'none' | undefined,
+    color?: 'primary' | 'secondary' | 'error' | 'warning' | 'success' | 'disabled' | undefined,
+    fill?: 'solid' | 'outline' | 'clear' | undefined,
+    border?: 'true' | undefined,
     disabled?: boolean,
     size?: 'small' | 'medium' | 'large' | undefined,
-    uppercase?: string,
+    uppercase?: 'true' | undefined,
     maxWidth?: number,
     minWidth?: number,
     maxHeight?: number,
@@ -19,9 +20,10 @@ type ButtonProps = Readonly<{
 
 export default function Button({ children, ...props }: ButtonProps) {
     const {
-        color = 'default',
+        color = 'primary',
         disabled,
         fill = 'solid',
+        border,
         size = 'medium',
         uppercase,
         maxWidth,
@@ -35,6 +37,6 @@ export default function Button({ children, ...props }: ButtonProps) {
     } = props
 
     return (
-        <button style={{ minWidth: minWidth ? minWidth + 'px' : '', maxWidth: maxWidth ? maxWidth + 'px' : '', minHeight: minHeight ? minHeight + 'px' : '', maxHeight: maxHeight ? maxHeight + 'px' : '', backgroundColor: customBGColor, color: customColor, borderColor: customBorderColor }} className={[color, fill, size, uppercase ? 'text-uppercase' : ''].join(' ')} onClick={buttonClick} disabled={disabled ? disabled : undefined}>{children}</button>
+        <button style={{ minWidth: minWidth ? minWidth + 'px' : '', maxWidth: maxWidth ? maxWidth + 'px' : '', minHeight: minHeight ? minHeight + 'px' : '', maxHeight: maxHeight ? maxHeight + 'px' : '', backgroundColor: customBGColor, color: customColor, borderColor: customBorderColor }} className={[color, fill, size, border ? 'border' : '', uppercase ? 'text-uppercase' : ''].join(' ')} onClick={buttonClick} disabled={disabled ? disabled : undefined}>{children}</button>
     )
 }

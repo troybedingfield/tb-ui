@@ -33,7 +33,7 @@ describe(`Component: ${Button.name}`, () => {
   })
 
   it('should render color prop = default correctly', () => {
-    const { container } = render(<Button color='default'>Button Text</Button>)
+    const { container } = render(<Button color='primary'>Button Text</Button>)
 
     expect(container.firstElementChild?.classList.contains('default')).toBe(true)
     // expect(getByText('large')).toBeInTheDocument();
@@ -201,7 +201,7 @@ describe(`Component: ${Button.name}`, () => {
     `)
   })
   it('should render fill prop = none correctly', () => {
-    const { container } = render(<Button fill='none'>Button Text</Button>)
+    const { container } = render(<Button fill='clear'>Button Text</Button>)
 
     expect(container.firstElementChild?.classList.contains('none')).toBe(true)
     // expect(getByText('large')).toBeInTheDocument();

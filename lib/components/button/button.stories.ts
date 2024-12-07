@@ -17,22 +17,31 @@ const meta = {
     argTypes: {
         children: {
             control: { type: 'text' },
-            defaultValue: { summary: ' ' }
+            defaultValue: { summary: ' ' },
+            description: "Button Text"
         },
         color: {
             options: ['default', 'success', 'warning', 'error', 'disabled', undefined],
             control: { type: 'select' },
-            defaultValue: { summary: 'default' }
+            defaultValue: { summary: 'default' },
+            description: "Define Color: 'default', 'success', 'warning', 'error', 'disabled', undefined"
+
         },
         fill: {
             options: ['solid', 'outline', 'clear', undefined],
             control: { type: 'select' },
             defaultValue: { summary: 'solid' }
         },
+        border: {
+            options: ['true', undefined],
+            control: { type: 'select' },
+            defaultValue: { summary: 'false' }
+        },
         size: {
             options: ['small', 'medium', 'large', undefined],
             control: { type: 'select' },
-            defaultValue: { summary: 'medium' }
+            defaultValue: { summary: 'medium' },
+            description: "Define Size: 'small', 'medium', 'large', undefined"
         },
         uppercase: {
             options: ['true', undefined],
@@ -70,6 +79,7 @@ const meta = {
         children: 'Button',
         size: undefined,
         fill: undefined,
+        border: undefined,
         color: undefined,
         uppercase: undefined,
         disabled: false,
@@ -85,36 +95,146 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const Default: Story = {
     args: {
         children: 'Primary Button'
+    },
+};
+export const Primary: Story = {
+    args: {
+        children: 'Primary Button',
+        color: 'primary'
     },
 };
 
 export const Secondary: Story = {
     args: {
-        children: 'Secondary Button',
+        children: 'Secondary Color Button',
         color: 'secondary'
     },
 };
 
+export const Success: Story = {
+    args: {
+        children: 'Success Color Button',
+        color: 'success'
+    },
+};
+export const Warning: Story = {
+    args: {
+        children: 'Warning Color Button',
+        color: 'warning'
+    },
+};
 export const Error: Story = {
     args: {
-        children: 'Error Button',
+        children: 'Error Color Button',
         color: 'error'
     },
 };
+export const DisabledColor: Story = {
+    args: {
+        children: 'Disabled Color Button',
+        color: 'disabled'
+    },
+};
 
-// export const Large: Story = {
-//   args: {
-//     size: 'large',
-//     label: 'Button',
-//   },
-// };
+export const SolidFill: Story = {
+    args: {
+        children: 'Solid Fill Button',
+        fill: 'solid'
+    },
+};
+export const OutlineFill: Story = {
+    args: {
+        children: 'Outline Fill Button',
+        fill: 'outline'
+    },
+};
+export const NoFill: Story = {
+    args: {
+        children: 'No Fill Button',
+        fill: 'clear'
+    },
+};
+export const Border: Story = {
+    args: {
+        children: 'Border Button',
+        border: 'true'
+    },
+};
+export const Disabled: Story = {
+    args: {
+        children: 'Disabled Button',
+        disabled: true
+    },
+};
+export const Small: Story = {
+    args: {
+        children: 'Small Button',
+        size: 'small'
+    },
+};
+export const Medium: Story = {
+    args: {
+        children: 'Medium Button',
+        size: 'medium'
+    },
+};
+export const Large: Story = {
+    args: {
+        children: 'Large Button',
+        size: 'large'
+    },
+};
+export const Uppercase: Story = {
+    args: {
+        children: 'Uppercase Button',
+        uppercase: 'true'
+    },
+};
+export const MaxWidth: Story = {
+    args: {
+        children: 'Max Width Button',
+        maxWidth: 400
+    },
+};
+export const MinWidth: Story = {
+    args: {
+        children: 'Min Width 400px Button',
+        minWidth: 400
+    },
+};
+export const MaxHeight: Story = {
+    args: {
+        children: 'Max Height Button',
+        maxHeight: 200
+    },
+};
+export const MinHeight: Story = {
+    args: {
+        children: 'Min Height 400px Button',
+        minHeight: 200
+    },
+};
+export const customBGColor: Story = {
+    args: {
+        children: 'Custom Background Color Button',
+        customBGColor: '#FFC0CB'
+    },
+};
+export const customColor: Story = {
+    args: {
+        children: 'Custom Text Color Button',
+        customColor: '#800000'
+    },
+};
+export const customBorderColor: Story = {
+    args: {
+        children: 'Custom Border Color Button',
+        customBorderColor: '#FF4d00',
+        border: 'true'
+    },
+};
 
-// export const Small: Story = {
-//   args: {
-//     size: 'small',
-//     label: 'Button',
-//   },
-// };
+
