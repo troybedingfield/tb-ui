@@ -1,4 +1,4 @@
-import './Toast.scss'
+import './toast.scss'
 import { useRef, RefObject } from "react"
 
 export default function Toast({ ...props }) {
