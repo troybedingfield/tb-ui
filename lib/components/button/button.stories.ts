@@ -97,12 +97,12 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
     args: {
-        children: 'Primary Button'
+        children: 'Button'
     },
 };
 export const Primary: Story = {
     args: {
-        children: 'Primary Button',
+        children: 'Primary Color Button',
         color: 'primary'
     },
 };
@@ -195,7 +195,7 @@ export const Uppercase: Story = {
 };
 export const MaxWidth: Story = {
     args: {
-        children: 'Max Width Button',
+        children: 'Max Width 400px Button',
         maxWidth: 400
     },
 };
@@ -207,13 +207,13 @@ export const MinWidth: Story = {
 };
 export const MaxHeight: Story = {
     args: {
-        children: 'Max Height Button',
+        children: 'Max Height 200px Button',
         maxHeight: 200
     },
 };
 export const MinHeight: Story = {
     args: {
-        children: 'Min Height 400px Button',
+        children: 'Min Height 200px Button',
         minHeight: 200
     },
 };
