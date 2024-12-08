@@ -21,21 +21,23 @@ const meta = {
             description: "Button Text"
         },
         color: {
-            options: ['default', 'success', 'warning', 'error', 'disabled', undefined],
+            options: ['primary', 'secondary', 'success', 'warning', 'error', 'disabled', undefined],
             control: { type: 'select' },
             defaultValue: { summary: 'default' },
-            description: "Define Color: 'default', 'success', 'warning', 'error', 'disabled', undefined"
+            description: "Define Color: 'primary', 'secondary', 'success', 'warning', 'error', 'disabled', undefined"
 
         },
         fill: {
             options: ['solid', 'outline', 'clear', undefined],
             control: { type: 'select' },
-            defaultValue: { summary: 'solid' }
+            defaultValue: { summary: 'solid' },
+            description: "Define Size: 'solid', 'outline', 'clear', undefined"
         },
         border: {
             options: ['true', undefined],
             control: { type: 'select' },
-            defaultValue: { summary: 'false' }
+            defaultValue: { summary: 'false' },
+            description: "Set Border: 'true', undefined"
         },
         size: {
             options: ['small', 'medium', 'large', undefined],
@@ -46,31 +48,48 @@ const meta = {
         uppercase: {
             options: ['true', undefined],
             control: { type: 'select' },
-            defaultValue: { summary: undefined }
+            defaultValue: { summary: undefined },
+            description: "Set Border: 'true', undefined"
         },
         minWidth: {
             control: { type: 'number' },
-            defaultValue: { summary: undefined }
+            defaultValue: { summary: undefined },
+            description: "Set Min Width: number"
         },
         maxWidth: {
             control: { type: 'number' },
-            defaultValue: { summary: undefined }
+            defaultValue: { summary: undefined },
+            description: "Set Max Width: number"
+        },
+        minHeight: {
+            control: { type: 'number' },
+            defaultValue: { summary: undefined },
+            description: "Set Min Height: number"
+        },
+        maxHeight: {
+            control: { type: 'number' },
+            defaultValue: { summary: undefined },
+            description: "Set Max Height: number"
         },
         disabled: {
             control: { type: 'boolean' },
-            defaultValue: { summary: undefined }
+            defaultValue: { summary: undefined },
+            description: "Set Disabled: 'true', undefined"
         },
         customBGColor: {
             control: { type: 'color' },
-            defaultValue: { summary: undefined }
+            defaultValue: { summary: undefined },
+            description: "Set Custom Bakground Color: Hex, rgb(), rgba()"
         },
         customColor: {
             control: { type: 'color' },
-            defaultValue: { summary: undefined }
+            defaultValue: { summary: undefined },
+            description: "Set Custom Text Color: Hex, rgb(), rgba()"
         },
         customBorderColor: {
             control: { type: 'color' },
-            defaultValue: { summary: undefined }
+            defaultValue: { summary: undefined },
+            description: "Set Border Color: Hex, rgb(), rgba()"
         },
     },
     // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
@@ -85,6 +104,8 @@ const meta = {
         disabled: false,
         minWidth: undefined,
         maxWidth: undefined,
+        minHeight: undefined,
+        maxHeight: undefined,
         customBGColor: undefined,
         customColor: undefined,
         customBorderColor: undefined
