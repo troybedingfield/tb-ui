@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
+import { fn } from '@storybook/test';
 import { default as Button } from './button';
 import '../../index.scss'
 
@@ -94,7 +94,7 @@ const meta = {
     },
     // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
     args: {
-        buttonClick: undefined,
+        buttonClick: fn(),
         children: 'Button',
         size: undefined,
         fill: undefined,
