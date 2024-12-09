@@ -238,13 +238,13 @@ export const MinHeight: Story = {
         minHeight: 200
     },
 };
-export const customBGColor: Story = {
+export const customBackgroundColor: Story = {
     args: {
         children: 'Custom Background Color Button',
         customBGColor: '#FFC0CB'
     },
 };
-export const customColor: Story = {
+export const customTextColor: Story = {
     args: {
         children: 'Custom Text Color Button',
         customColor: '#800000'
